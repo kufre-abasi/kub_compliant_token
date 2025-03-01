@@ -61,7 +61,7 @@ finalize transfer_private:
     assert.eq r2 r3;
 
 function initialize:
-    assert.eq self.caller aleo10047h9c9efxz3d0u69xn7alclvsvt96ysuhts80p7h2eh57kh5zsjwsp8f;
+    assert.eq self.caller aleo1etcfylxvf5waf3crajnjn440gqm0pyder84sfqxgqtqyy4pcc58s0y8anf;
     call token_registry.aleo/register_token 71619063553950105623552field 71619063553950105623552u128 71619063553950105623552u128 6u8 10_000_000_000_000_000u128 true kub_compliant_token.aleo into r0;
     async initialize r0 into r1;
     output r1 as kub_compliant_token.aleo/initialize.future;
@@ -71,8 +71,8 @@ finalize initialize:
     await r0;
 
 function mint_private:
-    assert.eq self.caller aleo10047h9c9efxz3d0u69xn7alclvsvt96ysuhts80p7h2eh57kh5zsjwsp8f;
-    call token_registry.aleo/mint_private 71619063553950105623552field aleo10047h9c9efxz3d0u69xn7alclvsvt96ysuhts80p7h2eh57kh5zsjwsp8f 1_000_000_000_000_000u128 true 4294967295u32 into r0 r1;
+    assert.eq self.caller aleo1etcfylxvf5waf3crajnjn440gqm0pyder84sfqxgqtqyy4pcc58s0y8anf;
+    call token_registry.aleo/mint_private 71619063553950105623552field aleo1etcfylxvf5waf3crajnjn440gqm0pyder84sfqxgqtqyy4pcc58s0y8anf 1_000_000_000_000_000u128 true 4294967295u32 into r0 r1;
     async mint_private r1 into r2;
     output r0 as token_registry.aleo/Token.record;
     output r2 as kub_compliant_token.aleo/mint_private.future;
@@ -87,6 +87,6 @@ finalize mint_private:
 
 function issue_limit:
     input r0 as address.private;
-    assert.eq self.caller aleo10047h9c9efxz3d0u69xn7alclvsvt96ysuhts80p7h2eh57kh5zsjwsp8f;
+    assert.eq self.caller aleo1etcfylxvf5waf3crajnjn440gqm0pyder84sfqxgqtqyy4pcc58s0y8anf;
     cast r0 0u128 0u32 into r1 as SpendLimit.record;
     output r1 as SpendLimit.record;
