@@ -3,17 +3,17 @@
     "version": "0.1.0",
     "description": "",
     "license": "MIT",
-    "network": "mainnet",
+    "network": "testnet",
     "dependencies": [
       {
         "name": "credits.aleo",
         "location": "network",
-        "network": "mainnet"
+        "network": "testnet"
       },
       {
         "name": "token_registry.aleo",
         "location": "network",
-        "network": "mainnet"
+        "network": "testnet"
       }
     ]
 }

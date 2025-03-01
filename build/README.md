@@ -1,4 +1,4 @@
-# compliant_token.aleo
+# kub_compliant_token.aleo
 
 ## Build Guide
 
