@@ -10,7 +10,7 @@ program kub_compliant_token.aleo {
   const BLOCKS_IN_A_DAY: u32 = 28_800u32; // Number of blocks per day for epoch-based calculations
   const MAX_SPEND_PER_DAY: u128 = 10_000_000_000u128; // Daily spending limit per user
   const MAX_U32: u32 = 4294967295u32; // Maximum value of a u32, used for transaction expiration
-
+ 
   // Record defining the spend limit for a user.
   record SpendLimit {
     owner: address,      // The owner of the spend limit
@@ -288,5 +288,34 @@ program kub_compliant_token.aleo {
     async function finalize_get_compliance_proof(user: address) {
         compliance_proofs.get(user);
     }
+/**
+ * Burns a specified amount of tokens publicly.
+ * This permanently removes tokens from circulation.
+ */
+async transition burn_public(
+  record_id: field, // Token identifier or record ID
+  owner: address, // Owner's address
+  amount: u128 // Amount to burn
+) -> Future {
+  // Ensure the caller is the owner of the token
+  assert_eq(owner, self.caller);
+
+  // Burn the specified amount of tokens
+  let burn_future: Future = token_registry.aleo/burn_public(
+    record_id,
+    owner,
+    amount
+  );
+
+  return finalize_burn_public(burn_future);
+}
+
+/**
+ * Finalizes the public burn transaction.
+ */
+async function finalize_burn_public(f0: Future) {
+  f0.await();
+}
+
 
 }
