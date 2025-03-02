@@ -1,4 +1,4 @@
-# **Aleo Workshop: Compliant Token Challenge – Earn $100!**  
+# **Aleo Workshop: Compliant Token Challenge 
 
 ## **Overview**  
 This workshop is focused on exploring compliance mechanisms within the Aleo ecosystem. Participants can earn **$100 USD** by deploying a new Aleo program that introduces a **compliance rule, mechanism, or example** related to compliant tokens. The best use of pAleo/Pondo tokens will earn an additional **$150 USD** worth of the pondo token.
